@@ -1,3 +1,6 @@
+package day03
+
+import readInput
 
 private fun part1(program: String): Int {
     return mulRegex1.findAll(program).sumOf { match ->
@@ -26,12 +29,12 @@ private val mulRegex1 = """mul\((\d+),(\d+)\)""".toRegex()
 private val mulRegex2 = """do\(\)|don't\(\)|mul\((\d+),(\d+)\)""".toRegex()
 
 fun main() {
-    val testInput1 = readInput("Day03_test").first()
-    val testInput2 = readInput("Day03_test")[1]
+    val testInput1 = readInput("day03/Day03_test").first()
+    val testInput2 = readInput("day03/Day03_test")[1]
     check(part1(testInput1) == 161)
     check(part2(testInput2) == 48)
 
-    val input = readInput("Day03").first()
+    val input = readInput("day03/Day03").first()
     println("Part 1: ${part1(input)}")
     println("Part 2: ${part2(input)}")
 }

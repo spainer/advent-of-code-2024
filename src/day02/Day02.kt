@@ -1,3 +1,6 @@
+package day02
+
+import readInput
 import kotlin.math.abs
 
 private fun part1(reports: List<List<Int>>) = reports.count { it.isSafe }
@@ -16,12 +19,12 @@ private val List<Int>.isSafe: Boolean get() {
 private val List<Int>.isCorrectable: Boolean get()  = indices.any { (subList(0, it) + subList(it + 1, size)).isSafe }
 
 fun main() {
-    val testInput = readInput("Day02_test")
+    val testInput = readInput("day02/Day02_test")
     val testReports = testInput.toReports()
     check(part1(testReports) == 2)
     check(part2(testReports) == 4)
 
-    val input = readInput("Day02")
+    val input = readInput("day02/Day02")
     val reports = input.toReports()
 
     println("Part 1: ${part1(reports)}")

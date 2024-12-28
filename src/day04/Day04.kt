@@ -1,3 +1,7 @@
+package day04
+
+import readInput
+
 private fun part1(input: List<String>): Int {
     val limits = Coordinate(input[0].length, input.size)
 
@@ -77,10 +81,10 @@ private operator fun Coordinate.contains(other: Coordinate): Boolean {
 private fun List<String>.get(coordinate: Coordinate) = this[coordinate.y][coordinate.x]
 
 fun main() {
-    val testInput = readInput("Day04_test")
+    val testInput = readInput("day04/Day04_test")
     check(part1(testInput) == 18)
     
-    val input = readInput("Day04")
+    val input = readInput("day04/Day04")
     println("Part 1: ${part1(input)}")
     println("Part 2: ${part2(input)}")
 }

@@ -1,3 +1,7 @@
+package day05
+
+import readInput
+
 private fun part1(updates: List<List<Int>>, rules: List<OrderingRule>): Int {
     val validUpdates = updates.filter { it.isValid(rules) }
     val middles = validUpdates.map { it.middle }
@@ -44,11 +48,11 @@ private fun List<Int>.correct(rules: List<OrderingRule>): List<Int> {
 }
 
 fun main() {
-    val (testUpdates, testRules) = readInput("Day05_test").parse()
+    val (testUpdates, testRules) = readInput("day05/Day05_test").parse()
     check(part1(testUpdates, testRules) == 143)
     check(part2(testUpdates, testRules) == 123)
 
-    val (updates, rules) = readInput("Day05").parse()
+    val (updates, rules) = readInput("day05/Day05").parse()
     println("Part 1: ${part1(updates, rules)}")
     println("Part 2: ${part2(updates, rules)}")
 }

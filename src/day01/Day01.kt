@@ -1,3 +1,6 @@
+package day01
+
+import readInput
 import kotlin.math.abs
 
 private fun part1(left: List<Int>, right: List<Int>): Int {
@@ -23,11 +26,11 @@ private fun List<String>.toLocationLists(): Pair<List<Int>, List<Int>> {
 }
 
 fun main() {
-    val testInput = readInput("Day01_test")
+    val testInput = readInput("day01/Day01_test")
     val (testLeft, testRight) = testInput.toLocationLists()
     check(part1(testLeft, testRight) == 11)
 
-    val input = readInput("Day01")
+    val input = readInput("day01/Day01")
     val (left, right) = input.toLocationLists()
 
     println("Result part 1: ${part1(left, right)}")
